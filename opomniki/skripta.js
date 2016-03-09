@@ -3,13 +3,29 @@ window.addEventListener('load', function() {
 		
 	var izvediPrijavo = function(event){
 	var uporabnik = document.querySelector("#uporabnisko_ime").value;
-	
-	document.getElementById("uporabnik").innerHTML=uporabnik;
-	//document.querySelector(".pokrivalo").style.display="none";
+		document.querySelector(".pokrivalo").style.display="none";
+	document.getElementById('uporabnik').innerHTML=uporabnik;
+
 		
 	};
+	document.querySelector("#prijavniGumb").addEventListener('click',izvediPrijavo);
 	
-	document.querySelector("#prijavniGumb").addEventListener('click',izvediPrijavo());
+	
+	var dodajOpomnik = function(){
+	var nazivZadolzitve = document.querySelector("#nazivZadolzitve").value;
+	var casOpomnika = document.querySelector("#casOpomnika").value;
+	
+	document.getElementById('naziv_opomnika').innerHTML="";
+	document.getElementById('cas_opomnika').innerHTML="";
+	document.getElementById('opomnik').innerHTML+="<div class='opomnik'>"
+          + "<div class='naziv_opomnika'>NAZIV_OPOMNIKA</div>"
+		  +  "<div class='cas_opomnika'> Opomnik čez <span>CAS_OPOMNIKA</span> sekund.</div>"
+		  +"</div>"
+
+				
+	}
+	
+	document.querySelector("#dodajGumb").addEventListener('click',dodajOpomnik);
 	
 	
 	
